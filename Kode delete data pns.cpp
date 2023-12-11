@@ -5,6 +5,25 @@ using namespace std;
 string n[max], nip[max], u[max], jk[max], s[max], pend[max], pk[max], tt[max], gol[max], g[max], loop;
 int pos=0;
 
+// Implementasi fungsi display
+void display() {
+    system("cls");
+    if (pos > 0) {
+        cout << "Data Tersimpan" << endl;
+        for (int a = 0; a < pos; a++) {
+            cout << "Data PNS ke- " << a + 1 << endl;
+            for (int q = 0; q < pos; q++) {
+                cout << q + 1 << ".  Nama : " << n[q] << endl;
+                cout << a + 2 << ".  NIP : " << nip[a] << endl;
+                // Sisipkan bagian display lainnya sesuai kebutuhan
+            }
+        }
+    } else {
+        cout << "Data Kosong" << endl;
+    }
+}
+
+
 void add(){
 
 	do{
@@ -117,6 +136,7 @@ int main(){
 	do{
 		system("cls");
 		cout<<"1. Tambah Data\n";
+		cout<<"2. Lihat Data\n";
 		cout<<"3. Edit Data\n";
 		cout<<"4. Hapus Data\n";
 	
@@ -125,6 +145,9 @@ int main(){
 		switch(pil){
 		case 1:
 			add();
+			break;
+		case 2:
+			display();
 			break;
 		case 3:
 			edit();
